@@ -82,19 +82,12 @@
                     <div class="caption-full">
                        <p><h3>Search!!!</h3></p>
     <form role="form" action="#" method="post">
-      <div class="form-group">
-          <label for="text">Facultet:</label>
-          <select name='facultet'>       
-             <?php foreach ($f_name as $name): ?>
-             <option><?php echo $name['name']; ?></option>
-             <?php endforeach; ?>
-          </select>
-      </div>
+     
       <div class="form-group">
           <label for="text">Bolum:</label>
           <select name='bolum'>       
              <?php foreach ($b_name as $name): ?>
-             <option value="<?php echo $name['id']; ?>"><?php echo $name['name']; ?></option>
+             <option value="<?php echo $name['id']; ?>"><?php echo $name['fname']." ".$name['bname']; ?></option>
              <?php endforeach; ?>
           </select>
       </div>

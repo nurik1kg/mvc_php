@@ -20,10 +20,10 @@ class StudentController
             Student :: deleteStudent($_POST['d_id']);
             return true;
          }
-        $f_name = array();
+        //$f_name = array();
         $b_name = array();
        // $studentAdd= News::getNewsItem($id);
-        $f_name = Student ::getFacultet();
+        //$f_name = Student ::getFacultet();
         $b_name = Student :: getBolum();
         require_once(ROOT.'/views/student/add_student.php');
         
@@ -43,9 +43,9 @@ class StudentController
              $tab = array();
              //$tab[]='';
          }
-        $f_name = array();
+        //$f_name = array();
         $b_name = array();
-        $f_name = Student ::getFacultet();
+        //$f_name = Student ::getFacultet();
         $b_name = Student :: getBolum();
         require_once(ROOT.'/views/student/search_student.php');
         

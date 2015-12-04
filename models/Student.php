@@ -12,7 +12,7 @@ class Student {
         $stmt->bind_param('sii', $name,$age,$bolum);
         /* execute prepared statement */
         $stmt->execute(); //zapros
-        $stmt->store_result(); // zapros
+        $stmt->store_result(); // zapros 
         
   		if ($stmt->affected_rows>0)
     	{
@@ -87,7 +87,7 @@ class Student {
     	$stmt->bind_result($name); // kelgen maanini yigarat
         // output data of each row
         $i=0;
-        while($row = $stmt->fetch())
+        while($stmt->fetch())
             {
                 $f_name[$i]['name'] = $name;
                 $i++;
@@ -103,7 +103,7 @@ class Student {
         
         $b_name = array();
         
-        $sql='SELECT id_b, bolum '
+        $sql='SELECT id_b, bolum, facultet '
             .'FROM bolum ';
         $stmt = $conn->prepare($sql); //dayardayt
         /* execute prepared statement */
@@ -112,13 +112,15 @@ class Student {
         
   		if ($stmt->num_rows>0)
     	{
-    	$stmt->bind_result($id,$name); // kelgen maanini yigarat
+    	$stmt->bind_result($id,$bname,$fname); // kelgen maanini yigarat
+        
         // output data of each row
         $i=0;
-        while($row = $stmt->fetch())
+        while($stmt->fetch())
             {
                 $b_name[$i]['id'] = $id;
-                $b_name[$i]['name'] = $name;
+                $b_name[$i]['bname'] = $bname;
+                $b_name[$i]['fname'] = $fname;
                 $i++;
             }
         }
@@ -143,7 +145,7 @@ class Student {
     	$stmt->bind_result($id,$name,$age,$fa,$bo); // kelgen maanini yigarat
         // output data of each row
         $i=0;
-        while($row = $stmt->fetch())
+        while($stmt->fetch())
             {
                 $tab[$i]['id'] = $id;
                 $tab[$i]['name'] = $name;
