@@ -1,9 +1,9 @@
 <?php
 return array(
-    
-    'news/([0-9]+)' => 'news/view/$1', // actionList â NewsController
-    'news' => 'news/index', // actionIndex â NewsController
-    'student/add' => 'student/add', // actionAdd â StudentController
-    'student' => 'student/search', // actionSearch â StudentController
+    'test'=> 'default/index',
+    'news/([0-9]+)' => 'news/view/$1', // actionList ï¿½ NewsController
+    'news' => 'news/index', // actionIndex ï¿½ NewsController
+    'student/add' => 'student/add', // actionAdd ï¿½ StudentController
+    'student' => 'student/search', // actionSearch ï¿½ StudentController
     '' => 'default/index', // home
 );
